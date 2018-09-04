@@ -1,0 +1,90 @@
+.icon-chooser {
+  position: relative;
+}
+
+.icon-chooser__toggler {
+  &, > span {
+    flexCenter();
+    border: 0 none;
+    border-right: 1px solid $white;
+    border-radius: 4px 0 0 4px;
+    background-color: $textfield;
+    width: 46px;
+    height: 42px;
+    padding: 0;
+    position: relative;
+  }
+
+  &.icon-chooser__toggler--active {
+    background-color: $textfieldFocus;
+  }
+
+  .icon-chooser__toggler__icon-wrapper {
+    background-color: $white;
+    right: 3px;
+    width: 16px;
+    height: 16px;
+    bottom: 3px;
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .icon-chooser__toggler__icon {
+    margin: -1px;
+  }
+}
+
+.icon-chooser__list-wrapper {
+  border: 1px solid darken($textfield, 5%);
+  border-radius: 4px;
+  background-color: $white;
+  top: 110%;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+
+  &.icon-chooser__list-wrapper--visible {
+    display: flex;
+  }
+}
+
+.icon-chooser__list {
+  border-top: 1px solid darken($textfield, 5%);
+  border-bottom: 1px solid darken($textfield, 5%);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  display: flex;
+  padding: 0 10px;
+  flex-wrap: wrap;
+}
+
+.icon-chooser__item {
+  margin-bottom: 0;
+
+  &.icon-chooser__item--selected {
+    .icon * {
+      stroke: $blue;
+    }
+  }
+}
+
+[data-action="select-icon"] {
+  &, > span {
+    flexCenter();
+    border: 0 none;
+    background-color: transparent;
+    width: 55px;
+    height: 55px;
+    padding: 0;
+  }
+}
+
+.icon-chooser__footer,
+.icon-chooser__list-search-wrapper {
+  padding: 10px;
+}

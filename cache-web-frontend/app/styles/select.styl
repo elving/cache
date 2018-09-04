@@ -1,0 +1,81 @@
+.select {
+  border: 1px solid $textfield;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 1.45;
+  padding: 10px 12px;
+  position: relative;
+  min-height: 42px;
+
+  &:hover {
+    background-color: $textfield;
+  }
+
+  &[disabled] {
+    &, &:after, select {
+      cursor: default;
+      opacity: 0.45;
+    }
+
+    select {
+      pointer-events: none;
+    }
+  }
+
+  select {
+    color: $textfieldColor;
+    cursor: pointer;
+    border: 0 none;
+    outline: 0 none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-family: $font;
+    line-height: 1.45;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 9px 12px 10px;
+    position: absolute;
+    min-height: 42px;
+  }
+
+  &:after {
+    background-size: 100% 100%;
+    background-image: url(/assets/images/icon-down.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: " ";
+    top: 50%;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    z-index: 5;
+    position: absolute;
+    margin-top: -10px;
+    pointer-events: none;
+  }
+}
+
+@-moz-document url-prefix() {
+  .select {
+    overflow: hidden;
+
+    select {
+      width: 120%;
+      width: -moz-calc(100% + 3em);
+      width: calc(100% + em);
+    }
+  }
+}
+
+.select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000000;
+}

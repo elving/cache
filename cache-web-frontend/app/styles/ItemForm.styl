@@ -1,0 +1,92 @@
+.ItemForm {
+  flex: 1;
+  width: 720px;
+  display: flex;
+  margin: 15px auto;
+  align-items: stretch;
+}
+
+.ItemForm__fields,
+.ItemForm__preview {
+  width: 360px;
+  padding: 15px;
+
+  .label--error {
+    text-align: center;
+    display: block;
+  }
+}
+
+.ItemForm__preview {
+  border-right: 1px solid $bg;
+  background-color: $white;
+  display: flex;
+
+  &.ItemForm__preview--loading {
+    background-size: 80px 80px;
+    background-image: url(/assets/images/loading-page.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.ItemForm__fields {
+  background-color: #ffffff;
+}
+
+.ItemForm__collection {
+  flexCenter();
+
+  .CollectionChooser {
+    width: 91%;
+  }
+
+  [data-action="showCollectionMiniForm"] {
+    width: 9%;
+    padding: 0;
+    margin-top: 22px;
+
+    > span {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.ItemForm__new-collection {
+  &.ItemForm__new-collection--no-collections {
+    .create-collection__name {
+      margin-right: 0;
+    }
+  }
+
+  .create-collection__name {
+    margin-right: 8px;
+  }
+
+  [data-action="hideCollectionMiniForm"] {
+    padding: 0;
+    margin-top: 9px;
+
+    > span {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 749px) {
+  .ItemForm {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    display: block;
+  }
+
+  .ItemForm__fields,
+  .ItemForm__preview {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .ItemForm__preview {
+    border-bottom: 1px solid $bg;
+  }
+}

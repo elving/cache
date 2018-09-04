@@ -1,0 +1,135 @@
+.collection-sidebar {
+  background-color: $filters;
+  width: 5vw;
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.collection-sidebar__toggle {
+  background-color: $filtersDarker;
+  width: 5vw;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-action="searchTags"],
+[data-action="searchItems"],
+[data-action="toggleSidebar"],
+[data-action="filterHighlighted"] {
+  padding: 0;
+  min-height: inherit;
+  margin-bottom: 10px;
+
+  .button__icon {
+    margin-right: 0;
+  }
+}
+
+[data-action="toggleSidebar"] {
+  margin-bottom: 0;
+}
+
+.collection-sidebar__top,
+.collection-sidebar__types,
+.collection-sidebar__colors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .collection-sidebar__type:last-child,
+  .collection-sidebar__color:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.collection-sidebar__type {
+  flexCenter();
+  margin-bottom: 8px;
+
+  &.collection-sidebar__type--selected {
+    path {
+      fill: $blue;
+    }
+  }
+}
+
+.collection-sidebar__color {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+
+  &[data-color="red"] {
+    border-color: $itemRed;
+  }
+
+  &[data-color="blue"] {
+    border-color: $itemBlue;
+  }
+
+  &[data-color="black"] {
+    border-color: $itemBlack;
+  }
+
+  &[data-color="green"] {
+    border-color: $itemGreen;
+  }
+
+  &[data-color="purple"] {
+    border-color: $itemPurple;
+  }
+
+  &[data-color="orange"] {
+    border-color: $itemOrange;
+  }
+
+  &[data-color="yellow"] {
+    border-color: $itemYellow;
+  }
+
+  &[data-color="turquoise"] {
+    border-color: $itemTurquoise;
+  }
+
+  &.collection-sidebar__color--selected {
+    &[data-color="red"] {
+      background-color: $itemRed;
+    }
+
+    &[data-color="blue"] {
+      background-color: $itemBlue;
+    }
+
+    &[data-color="black"] {
+      background-color: $itemBlack;
+    }
+
+    &[data-color="green"] {
+      background-color: $itemGreen;
+    }
+
+    &[data-color="purple"] {
+      background-color: $itemPurple;
+    }
+
+    &[data-color="orange"] {
+      background-color: $itemOrange;
+    }
+
+    &[data-color="yellow"] {
+      background-color: $itemYellow;
+    }
+
+    &[data-color="turquoise"] {
+      background-color: $itemTurquoise;
+    }
+  }
+}

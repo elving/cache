@@ -1,0 +1,585 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.group {
+  margin-bottom: 15px;
+
+  &.group--hidden {
+    display: none;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .label,
+  .button,
+  .select,
+  .textfield {
+    width: 100%;
+    display: flex;
+  }
+}
+
+.inline-groups {
+  display: flex;
+  justify-content: space-around;
+
+  .group {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  color: $grey;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &.label--error {
+    color: $darkRed;
+  }
+
+  &.label--section-title {
+    color: #68758b;
+    border-top: 1px solid $bg;
+    border-bottom: 1px solid $bg;
+    font-size: 18px;
+    text-align: center;
+    margin: 15px auto;
+    padding: 15px 0;
+    justify-content: center;
+  }
+
+  small {
+    margin-left: 5px;
+  }
+}
+
+.instructions {
+  color: $grey;
+  font-size: 11px;
+
+  &:before {
+    content: "*";
+  }
+}
+
+.error {
+  color: $darkRed;
+  text-align: center;
+  display: block;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .button {
+    padding: 5px 0 5px 5px;
+
+    &:last-child {
+      padding-right: 5px;
+    }
+
+    .button__icon {
+      margin-right: 0;
+    }
+  }
+}
+
+.button {
+  color: $textfieldColor;
+  border: 1px solid $textfield;
+  cursor: pointer;
+  outline: 0 none;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  padding: 10px 12px;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $textfield;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: $textfieldColor;
+    background-color: transparent;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  > span {
+    flexCenter();
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .icon {
+    fill: $darkestGrey;
+  }
+
+  &.button--mini {
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 5px;
+    min-height: inherit;
+  }
+
+  &.button--big {
+    font-size: 18px;
+    padding: 12px 18px;
+  }
+
+  &.button--white {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      color: $darkBlack;
+      background-color: $white;
+    }
+
+    &:active {
+      color: $white;
+      background-color: transparent;
+    }
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  &.button--primary {
+    color: $blue;
+    border-color: $blue;
+
+    &:hover {
+      color: $white;
+      background-color: $blue;
+
+      path {
+        fill: $white;
+      }
+    }
+
+    &:active {
+      color: $blue;
+      background-color: transparent;
+
+      path {
+        fill: $blue !important;
+      }
+    }
+  }
+
+  &.button--grey {
+    color: $darkBlack;
+    border-color: $textfieldPlaceholder;
+
+    &:hover {
+      color: $darkBlack;
+      background-color: $textfieldPlaceholder;
+
+      path {
+        fill: $darkBlack;
+      }
+    }
+
+    &:active {
+      color: $textfieldPlaceholder;
+      background-color: transparent;
+
+      path {
+        fill: $textfieldPlaceholder !important;
+      }
+    }
+  }
+
+  &.button--primary-alt {
+    color: $white;
+    border-color: $blue;
+    background-color: $blue;
+
+    &:hover {
+      border-color: $darkBlue;
+      background-color: $darkBlue;
+    }
+
+    &:active {
+      border-color: $darkerBlue;
+      background-color: $darkerBlue;
+    }
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  &.button--danger {
+    color: $darkRed;
+    border-color: $darkRed;
+
+    &:hover {
+      color: $white;
+      background-color: $darkRed;
+    }
+
+    &:active {
+      color: $darkRed;
+      background-color: transparent;
+    }
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  &.button--sidebar {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      color: $sidebar;
+      background-color: $white;
+    }
+
+    &:active {
+      color: $white;
+      background-color: transparent;
+    }
+  }
+
+  &.button--transparent {
+    color: $grey;
+    border-color: transparent;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+
+    .icon {
+      fill: $grey;
+    }
+  }
+
+  &.button--icon-only {
+    .button__icon {
+      margin-right: 0;
+    }
+  }
+}
+
+.button__text {
+  margin-top: -2px;
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+
+  .icon {
+    flex: 1;
+  }
+}
+
+.textfield {
+  placeholder($textfieldPlaceholder);
+  color: $textfieldColor;
+  border: 0 none;
+  cursor: text;
+  resize: none;
+  outline: 0 none;
+  border-radius: 4px;
+  background-color: $textfield;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+  line-height: 1.45;
+  padding: 10px 12px;
+  min-height: 42px;
+
+  &:focus {
+    background-color: $textfieldFocus;
+  }
+
+  &.textfield--error {
+    box-shadow: 0 0 0 1px $red;
+  }
+
+  &.textfield--mini {
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 5px 10px 4px;
+    min-height: 29px;
+  }
+}
+
+textarea.textfield {
+  min-height: 120px;
+}
+
+.dropdown {
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    .dropdown__toggler__text {
+      color: $white;
+    }
+
+    .dropdown__items {
+      display: block;
+    }
+  }
+
+  &.dropdown--dark {
+    &:hover {
+      .dropdown__toggler {
+        background-color: $filtersDark;
+      }
+    }
+
+    .dropdown__toggler__icon path {
+      fill: $white;
+    }
+
+    .dropdown__items {
+      background-color: $filtersDark;
+    }
+
+    .dropdown__item {
+      color: $white;
+
+      &:hover {
+        background-color: $filtersDarker;
+      }
+    }
+  }
+
+  &.dropdown--light {
+    &:hover {
+      .dropdown__toggler {
+        background-color: $grey;
+
+        .dropdown__toggler__icon path {
+          fill: $white;
+        }
+      }
+    }
+
+    .dropdown__toggler__icon path {
+      fill: $grey;
+    }
+
+    .dropdown__items {
+      background-color: $grey;
+    }
+
+    .dropdown__item {
+      color: $white;
+
+      &:hover {
+        background-color: $darkGrey;
+      }
+    }
+  }
+
+  &.dropdown--white {
+    &:hover {
+      .dropdown__toggler {
+        background-color: $white;
+
+        .dropdown__toggler__icon path {
+          fill: rgba($darkestGrey, 0.55);
+        }
+      }
+    }
+
+    .dropdown__toggler__icon path {
+      fill: $grey;
+    }
+
+    .dropdown__items {
+      background-color: $white;
+    }
+
+    .dropdown__item {
+      color: $darkBlack;
+
+      &:hover {
+        background-color: $darkWhite;
+      }
+    }
+  }
+
+  &.dropdown--up {
+    .dropdown__toggler {
+      border-radius: 0 0 4px 4px;
+
+      &.dropdown__toggler--squared {
+        border-radius: 0;
+      }
+    }
+
+    .dropdown__items {
+      border-radius: 4px 4px 0 4px;
+      top: auto;
+      bottom: 100%;
+
+      .dropdown__item {
+        &:first-child {
+          border-radius: 4px 4px 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 0 4px;
+        }
+
+        // One item only
+        &:first-child:nth-last-child(1) {
+          border-radius: 4px 4px 0 4px;
+        }
+      }
+    }
+  }
+}
+
+.dropdown__toggler {
+  flexCenter();
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  padding: 10px;
+  z-index: 5;
+  position: relative;
+
+  &.dropdown__toggler--squared {
+    border-radius: 0;
+  }
+}
+
+.dropdown__items {
+  cursor: pointer;
+  border-radius: 4px 0 4px 4px;
+  top: 100%;
+  right: 0;
+  display: none;
+  z-index: 1;
+  position: absolute;
+  min-width: 120px;
+
+  .dropdown__item {
+    &:first-child {
+      border-radius: 4px 0 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+
+    // One item only
+    &:first-child:nth-last-child(1) {
+      border-radius: 4px 0 4px 4px;
+    }
+  }
+}
+
+.dropdown__item {
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  font-family: $font;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// React-Tabs
+.react-tabs {
+  [role=tablist] {
+    border: 0 none;
+    border-bottom: 1px solid $darkerBg;
+    margin: 0 0 15px;
+    padding: 0 0 15px;
+  }
+
+  [role=tab] {
+    color: $grey;
+    cursor: pointer;
+    border: 0 none;
+    background-color: transparent;
+    font-size: 14px;
+    margin: 0 15px 0 0;
+    padding: 0;
+    outline: 0 none;
+
+    &[aria-selected=true] {
+      color: $blue;
+      border: 0 none;
+      background-color: transparent;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 749px) {
+  .react-tabs {
+    [role=tablist] {
+      margin: 0 0 10px;
+      padding: 0 0 10px;
+    }
+
+    [role=tab] {
+      font-size: 13px;
+      margin: 0 10px 0 0;
+    }
+  }
+}

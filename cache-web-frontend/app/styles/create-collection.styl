@@ -1,0 +1,39 @@
+.create-collection {
+  border-radius: 4px;
+  background-color: $white;
+  flex: 1;
+  width: 550px;
+  padding: 10px;
+  margin: 45px auto 0;
+
+  .label--error {
+    text-align: center;
+    display: block;
+  }
+}
+
+.create-collection__icon {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.create-collection__name {
+  flex: 1;
+  align-self: flex-end;
+
+  .textfield {
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+@media (max-width: 749px) {
+  .create-collection {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+
+  [data-action="closeCollectionForm"] {
+    padding: 0;
+  }
+}

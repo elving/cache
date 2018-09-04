@@ -1,0 +1,32 @@
+.thumbnail-chooser {
+  display: flex;
+  flex-direction: column;
+
+  .thumbnail-chooser__list {
+    flex: 1;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+
+  .thumbnail-chooser__thumbnail {
+    flexCenter();
+    border: 1px solid $bg;
+    border-radius: 3px;
+    background-color: rgba($bg, 0.65);
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 0 5px 5px 0;
+    padding: 5px;
+
+    &.thumbnail-chooser__thumbnail--selected {
+      border-color: $blue;
+    }
+
+    > .ImageContainer {
+      flexCenter();
+    }
+  }
+}

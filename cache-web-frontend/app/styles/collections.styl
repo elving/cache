@@ -1,0 +1,51 @@
+.collections-page {
+  width: 100vw;
+  height: 100vh;
+
+  &.collections-page--fetching {
+    background-size: 80px 80px;
+    background-image: url(/assets/images/loading-page.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .sidebar,
+    .content {
+      display: none;
+    }
+  }
+}
+
+.collections-page__wrapper {
+  height: 92vh;
+  display: flex;
+}
+
+@media (max-width: 749px) {
+  .collections-page__wrapper {
+    height: 100%;
+  }
+
+  .CreateItemModal,
+  .CollectionShareModal,
+  .DeleteCollectionModal,
+  .CollectionPrivacyModal {
+    & > .Modal {
+      width: calc(100% - 20px) !important;
+    }
+  }
+
+  .CreateItemModal {
+    .StoreLinkInput__input {
+      width: calc(75% - 10px) !important;
+    }
+
+    .StoreLinkInput__button {
+      width: 25% !important;
+      flex-shrink: 0;
+    }
+
+    .instructions {
+      display: none;
+    }
+  }
+}

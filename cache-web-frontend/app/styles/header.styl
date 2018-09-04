@@ -1,0 +1,143 @@
+.header {
+  background-color: $white;
+  height: 8vh;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo,
+.header__user,
+.header__content {
+  flexCenter();
+}
+
+.header__logo {
+  margin-right: 15px;
+}
+
+.header__user {
+  .button {
+    padding: 5px 12px;
+  }
+}
+
+[data-action="showCollectionsMobile"],
+[data-action="hideCollectionsMobile"] {
+  display: none;
+}
+
+.header__link {
+  font-size: 14px;
+  margin: 0 10px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header__user {
+  margin-left: 15px;
+}
+
+.CurrentUserDropdown {
+  z-index: 1000;
+
+  .dropdown__items {
+    width: 220px;
+  }
+
+  .dropdown__toggler__icon {
+    top: 1px;
+    position: relative;
+    margin-left: 5px;
+  }
+}
+
+.CurrentUserDropdown__name {
+  font-size: 14px;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+.CurrentUserDropdown__avatar {
+  border: 1px solid $white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 749px) {
+  .header {
+    height: 50px;
+    padding: 10px;
+    flex-shrink: 0;
+  }
+
+  .header a {
+    font-size: 14px;
+  }
+
+  .header__logo {
+    margin-right: 10px;
+  }
+
+  .header__logo-image {
+    width: 60px;
+  }
+
+  [data-action="showCollectionsMobile"],
+  [data-action="hideCollectionsMobile"] {
+    display: flex;
+    padding: 0;
+    margin-right: 5px;
+  }
+
+  .header__link {
+    font-size: 11px !important;
+    margin: 0 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .header__user {
+    margin-left: 10px;
+  }
+
+  .CurrentUserDropdown {
+    .dropdown__toggler {
+      padding-right: 0;
+      justify-content: flex-end;
+    }
+
+    .dropdown__toggler__icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-left: 2px;
+      margin-right: 0;
+    }
+  }
+
+  .CurrentUserDropdown__avatar {
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+  }
+
+  .CurrentUserDropdown__name {
+    display: none;
+  }
+}

@@ -1,0 +1,429 @@
+@import '~normalize.css/normalize.css';
+
+// react-select
+/**
+ * React Select
+ * ============
+ * Created by Jed Watson and Joss Mackison for KeystoneJS, http://www.keystonejs.com/
+ * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
+ * MIT License: https://github.com/keystonejs/react-select
+*/
+.Select {
+  position: relative;
+}
+
+.Select-control {
+  position: relative;
+  overflow: hidden;
+  background-color: $textfield;
+  border: 1px solid $textfield;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $textfieldColor;
+  cursor: text;
+  outline: none;
+  padding: 10px 60px 10px 12px;
+  min-height: 42px;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+}
+
+.is-searchable.is-open > .Select-control {
+  cursor: text;
+}
+
+.is-open > .Select-control {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: $textfieldFocus;
+  border-color: $textfieldFocus;
+}
+
+.is-open > .Select-control > .Select-arrow {
+  border-color: transparent transparent #999999;
+  border-width: 0 5px 5px;
+}
+
+.is-searchable.is-focused:not(.is-open) > .Select-control {
+  cursor: text;
+}
+
+.Select-placeholder {
+  color: $textfieldPlaceholder;
+  padding: 8px 60px 8px 10px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: -15px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.has-value > .Select-control > .Select-placeholder {
+  color: $textfieldColor;
+}
+
+.Select-value {
+  color: $textfieldColor;
+  padding: 8px 60px 8px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -15px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.has-value > .Select-control > .Select-value {
+  color: $textfieldColor;
+}
+
+.Select-input > input {
+  cursor: default;
+  background: none transparent;
+  box-shadow: none;
+  height: auto;
+  border: 0 none;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+}
+
+.is-focused .Select-input > input {
+  cursor: text;
+}
+
+.Select-control:not(.is-searchable) > .Select-input {
+  outline: none;
+}
+
+.Select-loading {
+  -webkit-animation: Select-animation-spin 400ms infinite linear;
+  -o-animation: Select-animation-spin 400ms infinite linear;
+  animation: Select-animation-spin 400ms infinite linear;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid #cccccc;
+  border-right-color: #333333;
+  display: inline-block;
+  position: relative;
+  margin-top: -8px;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+}
+
+.has-value > .Select-control > .Select-loading {
+  right: 46px;
+}
+
+.Select-clear {
+  color: $textfieldColor;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  padding: 6.5px 10px;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  width: 30px;
+}
+
+.Select-clear > span {
+  font-size: 16px;
+}
+
+.Select-arrow-zone {
+  content: " ";
+  background-size: 16px 16px;
+  background-image: url(/assets/images/icon-down.svg);
+  background-repeat: no-repeat;
+  background-position: center 11px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  cursor: pointer;
+}
+
+.Select-arrow {
+  border-color: $textfieldColor transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  content: " ";
+  display: none;
+  height: 0;
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  width: 0;
+  cursor: pointer;
+}
+
+.Select-menu-outer {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: $textfield;
+  border: 0 none;
+  border-top: 0 none;
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Select-menu {
+  max-height: 198px;
+  overflow-y: auto;
+}
+
+.Select-option {
+  box-sizing: border-box;
+  color: $textfieldColor;
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+}
+
+.Select-option:last-child {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.Select-option.is-focused {
+  background-color: $blue;
+  color: $white;
+}
+
+.Select-option.is-disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+.Select-noresults,
+.Select-search-prompt,
+.Select-searching {
+  box-sizing: border-box;
+  color: $grey;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+}
+
+.Select.is-multi .Select-control {
+  padding: 4px 60px 3px 3px;
+}
+
+.Select.is-multi .Select-input {
+  vertical-align: middle;
+  border: 1px solid transparent;
+  margin: 2px;
+  padding: 3px 5px;
+}
+
+.Select-item {
+  background-color: $white;
+  border-radius: 4px;
+  border: 1px solid $blue;
+  color: $blue;
+  display: inline-block;
+  font-size: 14px;
+  font-family: $font;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 2px;
+}
+
+.Select-item-icon,
+.Select-item-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Select-item-label {
+  cursor: default;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  font-size: 12px;
+  padding: 3px 8px 4px 7px;
+  font-size: 12px;
+  font-family: $font;
+  font-weight: 400;
+}
+
+.Select-item-label .Select-item-label__a {
+  color: #007eff;
+  cursor: pointer;
+}
+
+.Select-item-icon {
+  cursor: pointer;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-right: 1px solid $blue;
+  padding: 1.5px 7px 3px 8px;
+}
+
+.Select-item-icon:hover,
+.Select-item-icon:focus {
+  background-color: $blue;
+  color: $white;
+}
+
+.Select-item-icon:active {
+  background-color: rgba(0, 126, 255, 0.24);
+}
+
+.Select.is-multi.is-disabled .Select-item {
+  background-color: #f2f2f2;
+  border: 1px solid #d9d9d9;
+  color: #888888;
+}
+
+.Select.is-multi.is-disabled .Select-item-icon {
+  cursor: not-allowed;
+  border-right: 1px solid #d9d9d9;
+}
+
+.Select.is-multi.is-disabled .Select-item-icon:hover,
+.Select.is-multi.is-disabled .Select-item-icon:focus,
+.Select.is-multi.is-disabled .Select-item-icon:active {
+  background-color: #f2f2f2;
+}
+
+@keyframes Select-animation-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes Select-animation-spin {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+// Doorbell.io
+#doorbell-background {
+  background-color: $bg;
+}
+
+#doorbell-button {
+  color: $white;
+  background: $blue;
+  border-radius: 5px 0 0 0;
+  font-size: 13px;
+  right: 0;
+  padding: 10px 15px;
+}
+
+#doorbell {
+  #doorbell-form {
+    border: 0 none;
+    box-shadow: none;
+    background-color: $white;
+
+    legend {
+      border-color: $bg;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+    }
+
+    #doorbell-feedback, #doorbell-email {
+      placeholder($textfieldPlaceholder);
+      color: $textfieldColor;
+      border: 0 none;
+      cursor: text;
+      resize: none;
+      outline: 0 none;
+      border-radius: 4px;
+      background-color: $textfield;
+      font-size: 14px;
+      font-family: $font;
+      font-weight: 400;
+      line-height: 1.45;
+      width: 94%;
+      display: block;
+      padding: 10px 12px;
+      margin-bottom: 15px;
+    }
+
+    #doorbell-attach-screenshot-wrapper {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    #doorbell-submit-button {
+      color: $blue;
+      border: 1px solid $blue;
+      cursor: pointer;
+      outline: 0 none;
+      border-radius: 4px;
+      background-color: transparent;
+      font-size: 14px;
+      font-family: $font;
+      font-weight: 400;
+      line-height: 1.45;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      padding: 10px 12px;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: $white;
+        background-color: $blue;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: $blue;
+        background-color: transparent;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      > span {
+        flexCenter();
+      }
+    }
+  }
+}
+
+@media (max-width: 749px) {
+  #doorbell-button {
+    display: none;
+  }
+}

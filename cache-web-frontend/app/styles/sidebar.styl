@@ -1,0 +1,32 @@
+.sidebar {
+  background-color: $sidebar;
+  width: 20vw;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.sidebar--collapsed {
+    display: none;
+  }
+
+  &.sidebar--no-collection {
+    display: none;
+  }
+}
+
+@media (max-width: 749px) {
+  .sidebar {
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    display: none;
+    z-index: 999;
+    position: absolute;
+
+    &.sidebar--visible-mobile {
+      display: flex;
+    }
+  }
+}

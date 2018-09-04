@@ -1,0 +1,95 @@
+.CreateItem {
+  background-color: $darkWhite;
+
+  .ItemForm {
+    flex: inherit;
+    margin: 0 auto;
+  }
+
+  .thumbnail-chooser {
+    background-color: $white;
+    width: 720px;
+    height: 400px;
+    padding: 5px;
+
+    .thumbnail-chooser__thumbnail {
+      width: calc(100% / 4 - 5px);
+    }
+  }
+
+  [data-action="goToStoreForm"],
+  [data-action="goToThumbnails"],
+  [data-action="cancelCreateItem"] {
+    width: 200px;
+  }
+
+  [data-action="goToStoreForm"] {
+    .icon {
+      margin-left: 5px;
+    }
+  }
+
+  [data-action="goToThumbnails"] {
+    .icon {
+      margin-right: 5px;
+    }
+  }
+
+  [data-action="showMoreSettings"] {
+    border-top: 1px solid $bg;
+    border-bottom: 1px solid $bg;
+    border-radius: 0;
+    width: 100%;
+    padding 0;
+    margin-bottom: 15px;
+
+    .icon {
+      margin-left: 5px;
+    }
+  }
+}
+
+.CreateItem__content {
+  background-color: $darkWhite;
+  width: 100vw;
+  display: flex;
+  min-height: 92vh;
+  padding-top: 15px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CreateItem__title {
+  font-size: 26px;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.CreateItem__actions {
+  flexCenter();
+  margin: 15px auto;
+}
+
+.CreateItem__content__loader {
+  background-size: 45px 45px;
+  background-image: url(/assets/images/loading.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 45px;
+  height: 45px;
+}
+
+@media (max-width: 749px) {
+  .CreateItem {
+    .ItemForm {
+      margin: 10px;
+    }
+  }
+
+  .CreateItem__content {
+    width: 100%;
+    padding: 0;
+    min-height: 100%;
+  }
+}

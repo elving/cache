@@ -1,0 +1,39 @@
+.ImageContainer {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImageContainer__image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.ImageContainer__error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ImageContainer__error__icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.ImageContainer__error__text {
+  color: $red;
+}
+
+.ImageContainer__loader {
+  background-size: 45px 45px;
+  background-image: url(/assets/images/loading.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 45px;
+  height: 45px;
+}

@@ -1,0 +1,27 @@
+.InternalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.InternalHeader__logo {
+  flexCenter();
+}
+
+.InternalHeader__links {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > a {
+    color: $white;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.item-page {
+  &.item-page--fetching {
+    .item__content {
+      display: none;
+    }
+
+    .items__loader {
+      display: block;
+    }
+  }
+
+  .sticky-header--fixed + .ui__page-content {
+    margin-top: 66px;
+  }
+}
+
+.item-detail {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .item__image-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item__content {
+    border: 0 none;
+    border-radius: 0;
+  }
+
+  .item__data-row {
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .item__description {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cache | Collect Everything</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="author" content="Elving Rodriguez">
+    <meta name="description" content="Collect Everything">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+  </head>
+
+  <body>
+    <div id="application" onclick=""></div>
+
+    <!-- Prevents errors in dev when sending data to Google Analytics -->
+    <script>window.ga = function(){ return; };</script>
+
+    <!-- Prevents errors in dev when sending data to Sentry -->
+    <script>window.Raven = { setUserContext: function(){ return; } };</script>
+
+    <!-- Set globals -->
+    <script>window.CACHE_ENV = 'development';</script>
+    <script>window.CACHE_STATIC_URL = '/assets';</script>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>

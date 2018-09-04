@@ -1,0 +1,31 @@
+{
+  "name": "cache-web-backend",
+  "version": "1.8.0",
+  "description": "Cache web backend.",
+  "main": "index.js",
+  "engines": {
+    "node": "4.x"
+  },
+  "scripts": {
+    "deploy": "npm run pushOrigin && git push dokku master",
+    "development": "NODE_ENV=development node index.js",
+    "production": "NODE_ENV=production node index.js",
+    "pushOrigin": "git push origin master && git push --tags origin",
+    "updateInstance": "ssh root@104.131.32.94 apt-get update; ssh root@104.131.32.94 apt-get dist-upgrade; root@104.131.32.94 shutdown -r now; ssh root@104.131.32.94 dokku plugins-update"
+  },
+  "author": "Elving Rodriguez",
+  "dependencies": {
+    "axios": "^0.7.0",
+    "babel": "^5.8.20",
+    "body-parser": "^1.12.4",
+    "cheerio": "^0.19.0",
+    "cors": "^2.7.1",
+    "dotenv": "^1.2.0",
+    "express": "^4.12.4",
+    "hbs": "^3.1.0",
+    "lodash": "^3.10.1",
+    "method-override": "^2.3.3",
+    "raven": "^0.8.1",
+    "request": "^2.65.0"
+  }
+}

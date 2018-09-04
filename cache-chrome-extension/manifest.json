@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Cache",
+  "description": "Collect Everything.",
+  "version": "1.6.0",
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "Store this page"
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "js": ["js/utils.js", "js/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "scripts": ["js/utils.js", "js/background.js"]
+  },
+  "web_accessible_resources": [ "js/*", "html/*", "css/*", "images/*" ],
+  "content_security_policy": "script-src 'self'; object-src 'self'"
+}
